@@ -8,5 +8,19 @@
 
 'use strict';
 
-exports.awesome = ->
-  'awesome'
+namespace = require 'node-namespace'
+
+require('./adaptor')
+require('./driver')
+
+module.exports =
+  adaptor: (args...) ->
+    new Cylon.Adaptor.Pebble(args...)
+
+  driver: (opts) ->
+    new Cylon.Driver.Pebble(opts)
+
+  register: (robot) ->
+    Logger.debug "Registering Pebble adaptor and drivers for #{robot.name}"
+    robot.registerAdaptor 'cylon-pebble', 'pebble'
+    robot.registerDriver 'cylon-pebble', 'pebble'

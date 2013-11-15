@@ -1,8 +1,19 @@
 (function() {
   'use strict';
-  var cylonPebble;
+  var namespace, pebble;
 
-  cylonPebble = source("cylon-pebble");
+  namespace = require('node-namespace');
+
+  namespace('Cylon', function() {
+    return this.Basestar = (function() {
+      function Basestar() {}
+
+      return Basestar;
+
+    })();
+  });
+
+  pebble = source("cylon-pebble");
 
   describe("basic tests", function() {
     it("standard async test", function(done) {
@@ -34,10 +45,14 @@
       data[0].should.be.eql(obj);
       return data[0].should.be.equal(obj);
     });
-    return it("cylon-pebble should be awesome", function() {
-      cylonPebble.should.have.keys('awesome');
-      cylonPebble.awesome.should.be.a('function');
-      return cylonPebble.awesome().should.be.equal('awesome');
+    it("can register", function() {
+      return pebble.register.should.be.a('function');
+    });
+    it("can create an adaptor", function() {
+      return pebble.adaptor.should.be.a('function');
+    });
+    return it("can create a driver", function() {
+      return pebble.driver.should.be.a('function');
     });
   });
 

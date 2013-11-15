@@ -1,6 +1,12 @@
 'use strict';
 
-cylonPebble = source("cylon-pebble")
+# Needed so that tests don't implode
+namespace = require 'node-namespace'
+namespace 'Cylon', ->
+  class @Basestar
+    constructor: ->
+
+pebble = source("cylon-pebble")
 
 describe "basic tests", ->
   it "standard async test", (done) ->
@@ -29,8 +35,11 @@ describe "basic tests", ->
     # hard equal
     data[0].should.be.equal obj
 
-  # Now on to a `real` test
-  it "cylon-pebble should be awesome", ->
-    cylonPebble.should.have.keys 'awesome'
-    cylonPebble.awesome.should.be.a 'function'
-    cylonPebble.awesome().should.be.equal 'awesome'
+  it "can register", ->
+    pebble.register.should.be.a 'function'
+
+  it "can create an adaptor", ->
+    pebble.adaptor.should.be.a 'function'
+
+  it "can create a driver", ->
+    pebble.driver.should.be.a 'function'
