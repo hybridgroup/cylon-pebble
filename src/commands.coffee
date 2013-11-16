@@ -9,4 +9,8 @@
 namespace = require 'node-namespace'
 
 namespace "Cylon.Pebble", ->
-  @Commands = ['message']
+  @Commands = [
+    'message',
+    'message_queue',
+    'last_message'
+  ]

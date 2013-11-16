@@ -25,6 +25,8 @@
         Pebble.__super__.constructor.apply(this, arguments);
         this.device = opts.device;
         this.connection = this.device.connection;
+        this.messages = [];
+        this.proxyMethods(Cylon.Pebble.Commands, this.connection, this);
       }
 
       Pebble.prototype.commands = function() {
@@ -39,6 +41,14 @@
 
       Pebble.prototype.stop = function() {
         return Logger.debug("Pebble stopping");
+      };
+
+      Pebble.prototype.message_queue = function() {
+        return this.messages;
+      };
+
+      Pebble.prototype.last_message = function() {
+        return this.messages[this.messages.length - 1];
       };
 
       return Pebble;

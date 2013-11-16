@@ -13,7 +13,7 @@
   namespace = require('node-namespace');
 
   namespace("Cylon.Pebble", function() {
-    return this.Commands = ['message'];
+    return this.Commands = ['message', 'message_queue', 'last_message'];
   });
 
 }).call(this);
