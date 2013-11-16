@@ -16,7 +16,7 @@ namespace "Cylon.Driver", ->
       super
       @device = opts.device
       @connection = @device.connection
-      @message_queue = []
+      @messages = []
       @proxyMethods Cylon.Pebble.Commands, @connection, this
 
     commands: -> Cylon.Pebble.Commands
@@ -30,7 +30,7 @@ namespace "Cylon.Driver", ->
       Logger.debug "Pebble stopping"
 
     message_queue: ->
-      @message_queue
+      @messages
 
     last_message: ->
-      @message_queue[@messages.length-1]
+      @messages[@messages.length-1]
