@@ -2,7 +2,7 @@ Cylon = require('cylon')
 
 Cylon.api host: '0.0.0.0', port: '8080'
 
-robot = 
+class PebbleRobot
   connection:
     name: 'pebble', adaptor: 'pebble'
 
@@ -10,13 +10,15 @@ robot =
     name: 'pebble', driver: 'pebble'
 
   work: (self) ->
-    c = 0
-    every 1.second(), -> 
+    c = 100
+    every 1.second(), ->
       c++
-      self.pebble.message_queue().push(c)
+      str = "c: #{c}"
+      self.pebble.message_queue().push(str)
       console.log(self.pebble.last_message())
 
-bot = Object.create(robot)
+bot = new PebbleRobot()
 bot.name = 'pebble'
-Cylon.robot Object.create(bot)
+Cylon.robot bot
+
 Cylon.start()
