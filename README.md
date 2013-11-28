@@ -11,6 +11,8 @@ Install the module with: `npm install cylon-pebble`
 
 ## Examples
 
+### JavaScript
+
 ```javascript
   Cylon = require('cylon');
 
@@ -57,7 +59,7 @@ Install the module with: `npm install cylon-pebble`
 
   Cylon.start();
 ```
-
+### CoffeeScript
 ```coffee-script
   Cylon = require('cylon')
 
