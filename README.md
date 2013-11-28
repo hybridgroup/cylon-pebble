@@ -4,6 +4,10 @@ Cylon.js (http://cylonjs.com) is a JavaScript framework for robotics and physica
 
 This module provides an adaptor and driver for the Pebble smart watch (http://getpebble.com/). It uses the Pebble 2.0 SDK, and requires the 2.0 iOS or Android app, and that the "Chomps" app (https://github.com/hybridgroup/chomps) has been installed on the Pebble watch.
 
+Want to use Ruby on robots? Check out our sister project Artoo (http://artoo.io)
+
+Want to use the Go programming language to power your robots? Check out our sister project Gobot (http://gobot.io).
+
 [![Build Status](https://secure.travis-ci.org/hybridgroup/cylon-pebble.png?branch=master)](http://travis-ci.org/hybridgroup/cylon-pebble)
 
 ## Getting Started
@@ -11,17 +15,80 @@ Install the module with: `npm install cylon-pebble`
 
 ## Examples
 
+### JavaScript
+
 ```javascript
-var Cylon = require('cylon');
+Cylon = require('cylon');
 
-...
+Cylon.api({
+  host: '0.0.0.0',
+  port: '8080'
+});
+
+PebbleRobot = (function() {
+
+  function PebbleRobot() {}
+
+  PebbleRobot.prototype.connection = {
+    name: 'pebble',
+    adaptor: 'pebble'
+  };
+
+  PebbleRobot.prototype.device = {
+    name: 'pebble',
+    driver: 'pebble'
+  };
+
+  PebbleRobot.prototype.work = function(self) {
+    var c;
+    c = 100;
+    return every(1..second(), function() {
+      var str;
+      c++;
+      str = "c: " + c;
+      self.pebble.message_queue().push(str);
+      return console.log(self.pebble.last_message());
+    });
+  };
+
+  return PebbleRobot;
+
+})();
+
+bot = new PebbleRobot();
+
+bot.name = 'pebble';
+
+Cylon.robot(bot);
+
+Cylon.start();
 ```
-
+### CoffeeScript
 ```coffee-script
-Cylon = require 'cylon'
+Cylon = require('cylon')
 
-Cylon.robot
-...
+Cylon.api host: '0.0.0.0', port: '8080'
+
+class PebbleRobot
+  connection:
+    name: 'pebble', adaptor: 'pebble'
+
+  device:
+    name: 'pebble', driver: 'pebble'
+
+  work: (self) ->
+    c = 100
+    every 1.second(), ->
+      c++
+      str = "c: \#{c}"
+      self.pebble.message_queue().push(str)
+      console.log(self.pebble.last_message())
+
+bot = new PebbleRobot()
+bot.name = 'pebble'
+Cylon.robot bot
+
+Cylon.start()
 ```
 
 ## Documentation
