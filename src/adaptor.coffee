@@ -9,25 +9,14 @@
 'use strict';
 
 namespace = require 'node-namespace'
+require './cylon-pebble'
 require './commands'
 
-namespace "Cylon.Adaptor", ->
-  class @Pebble extends Cylon.Basestar
-    constructor: (opts) ->
+namespace "Cylon.Adaptors", ->
+  class @Pebble extends Cylon.Adaptor
+    constructor: (opts = {}) ->
       super
-      @connection = opts.connection
-      @name = opts.name
       @pebble = null
       @connector = null
-      @myself = this
 
     commands: -> Cylon.Pebble.Commands
-
-    connect: (callback) ->
-      Logger.debug "Connecting to Pebble '#{@name}'..."
-
-      (callback)(null)
-      @connection.emit 'connect'
-
-    disconnect: ->
-      Logger.debug "Disconnecting from Pebble '#{@name}'..."

@@ -15,32 +15,22 @@
 
   namespace = require('node-namespace');
 
+  require('./cylon-pebble');
+
   require('./commands');
 
-  namespace("Cylon.Driver", function() {
+  namespace("Cylon.Drivers", function() {
     return this.Pebble = (function(_super) {
       __extends(Pebble, _super);
 
       function Pebble(opts) {
         Pebble.__super__.constructor.apply(this, arguments);
-        this.device = opts.device;
-        this.connection = this.device.connection;
         this.messages = [];
         this.proxyMethods(Cylon.Pebble.Commands, this.connection, this);
       }
 
       Pebble.prototype.commands = function() {
         return Cylon.Pebble.Commands;
-      };
-
-      Pebble.prototype.start = function(callback) {
-        Logger.debug("Pebble started");
-        callback(null);
-        return this.device.emit('start');
-      };
-
-      Pebble.prototype.stop = function() {
-        return Logger.debug("Pebble stopping");
       };
 
       Pebble.prototype.message_queue = function() {
@@ -53,7 +43,7 @@
 
       return Pebble;
 
-    })(Cylon.Basestar);
+    })(Cylon.Driver);
   });
 
 }).call(this);

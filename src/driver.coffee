@@ -8,26 +8,17 @@
 
 'use strict';
 namespace = require 'node-namespace'
+require './cylon-pebble'
 require './commands'
 
-namespace "Cylon.Driver", ->
-  class @Pebble extends Cylon.Basestar
+namespace "Cylon.Drivers", ->
+  class @Pebble extends Cylon.Driver
     constructor: (opts) ->
       super
-      @device = opts.device
-      @connection = @device.connection
       @messages = []
       @proxyMethods Cylon.Pebble.Commands, @connection, this
 
     commands: -> Cylon.Pebble.Commands
-
-    start: (callback) ->
-      Logger.debug "Pebble started"
-      (callback)(null)
-      @device.emit 'start'
-
-    stop: ->
-      Logger.debug "Pebble stopping"
 
     message_queue: ->
       @messages
