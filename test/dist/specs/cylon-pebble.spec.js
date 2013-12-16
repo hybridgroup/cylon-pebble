@@ -1,21 +1,10 @@
 (function() {
   'use strict';
-  var namespace, pebble;
-
-  namespace = require('node-namespace');
-
-  namespace('Cylon', function() {
-    return this.Basestar = (function() {
-      function Basestar() {}
-
-      return Basestar;
-
-    })();
-  });
+  var pebble;
 
   pebble = source("cylon-pebble");
 
-  describe("basic tests", function() {
+  describe("Cylon.Pebble", function() {
     it("standard async test", function(done) {
       var bool;
       bool = false;

@@ -10,15 +10,16 @@
 
 namespace = require 'node-namespace'
 
-require('./adaptor')
-require('./driver')
+require 'cylon'
+require './adaptor'
+require './driver'
 
 module.exports =
   adaptor: (args...) ->
-    new Cylon.Adaptor.Pebble(args...)
+    new Cylon.Adaptors.Pebble(args...)
 
   driver: (opts) ->
-    new Cylon.Driver.Pebble(opts)
+    new Cylon.Drivers.Pebble(opts)
 
   register: (robot) ->
     Logger.debug "Registering Pebble adaptor and drivers for #{robot.name}"

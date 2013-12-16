@@ -1,14 +1,8 @@
 'use strict';
 
-# Needed so that tests don't implode
-namespace = require 'node-namespace'
-namespace 'Cylon', ->
-  class @Basestar
-    constructor: ->
-
 pebble = source("cylon-pebble")
 
-describe "basic tests", ->
+describe "Cylon.Pebble", ->
   it "standard async test", (done) ->
     bool = false
     bool.should.be.false

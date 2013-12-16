@@ -14,6 +14,8 @@
 
   namespace = require('node-namespace');
 
+  require('cylon');
+
   require('./adaptor');
 
   require('./driver');
@@ -26,10 +28,10 @@
         ctor.prototype = func.prototype;
         var child = new ctor, result = func.apply(child, args);
         return Object(result) === result ? result : child;
-      })(Cylon.Adaptor.Pebble, args, function(){});
+      })(Cylon.Adaptors.Pebble, args, function(){});
     },
     driver: function(opts) {
-      return new Cylon.Driver.Pebble(opts);
+      return new Cylon.Drivers.Pebble(opts);
     },
     register: function(robot) {
       Logger.debug("Registering Pebble adaptor and drivers for " + robot.name);

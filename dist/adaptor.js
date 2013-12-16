@@ -15,38 +15,30 @@
 
   namespace = require('node-namespace');
 
+  require('./cylon-pebble');
+
   require('./commands');
 
-  namespace("Cylon.Adaptor", function() {
+  namespace("Cylon.Adaptors", function() {
     return this.Pebble = (function(_super) {
       __extends(Pebble, _super);
 
       function Pebble(opts) {
+        if (opts == null) {
+          opts = {};
+        }
         Pebble.__super__.constructor.apply(this, arguments);
-        this.connection = opts.connection;
-        this.name = opts.name;
         this.pebble = null;
         this.connector = null;
-        this.myself = this;
       }
 
       Pebble.prototype.commands = function() {
         return Cylon.Pebble.Commands;
       };
 
-      Pebble.prototype.connect = function(callback) {
-        Logger.debug("Connecting to Pebble '" + this.name + "'...");
-        callback(null);
-        return this.connection.emit('connect');
-      };
-
-      Pebble.prototype.disconnect = function() {
-        return Logger.debug("Disconnecting from Pebble '" + this.name + "'...");
-      };
-
       return Pebble;
 
-    })(Cylon.Basestar);
+    })(Cylon.Adaptor);
   });
 
 }).call(this);
