@@ -1,6 +1,6 @@
 {
   "name": "cylon-pebble",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "main": "dist/cylon-pebble.js",
   "description": "Cylon adaptor/driver for the Pebble smart watch",
   "homepage": "http://cylonjs.com",
