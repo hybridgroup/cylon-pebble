@@ -24,6 +24,9 @@
       __extends(Pebble, _super);
 
       function Pebble(opts) {
+        if (opts == null) {
+          opts = {};
+        }
         Pebble.__super__.constructor.apply(this, arguments);
         this.messages = [];
         this.proxyMethods(Cylon.Pebble.Commands, this.connection, this);

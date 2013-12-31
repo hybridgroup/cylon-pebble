@@ -6,19 +6,22 @@
  * Licensed under the Apache 2.0 license.
 ###
 
-'use strict';
+'use strict'
+
 namespace = require 'node-namespace'
+
 require './cylon-pebble'
 require './commands'
 
 namespace "Cylon.Drivers", ->
   class @Pebble extends Cylon.Driver
-    constructor: (opts) ->
+    constructor: (opts = {}) ->
       super
       @messages = []
       @proxyMethods Cylon.Pebble.Commands, @connection, this
 
-    commands: -> Cylon.Pebble.Commands
+    commands: ->
+      Cylon.Pebble.Commands
 
     message_queue: ->
       @messages

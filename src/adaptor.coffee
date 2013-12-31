@@ -6,7 +6,7 @@
  * Licensed under the Apache 2.0 license.
 ###
 
-'use strict';
+'use strict'
 
 namespace = require 'node-namespace'
 require './cylon-pebble'
@@ -19,4 +19,5 @@ namespace "Cylon.Adaptors", ->
       @pebble = null
       @connector = null
 
-    commands: -> Cylon.Pebble.Commands
+    commands: ->
+      Cylon.Pebble.Commands
