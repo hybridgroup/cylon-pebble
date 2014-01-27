@@ -23,16 +23,14 @@ namespace "Cylon.Drivers", ->
     commands: ->
       Cylon.Pebble.Commands
 
-# Public: message_queue()
-# Some text Here.
-#
-# Returns null.
+    # Public: Some text Here.
+    #
+    # Returns null.
     message_queue: ->
       @messages
 
-# Public: last_message()
-# Some text Here.
-#
-# Returns null.
+    # Public: Some text Here.
+    #
+    # Returns null.
     last_message: ->
       @messages[@messages.length-1]
