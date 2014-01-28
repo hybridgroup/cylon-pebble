@@ -36,16 +36,10 @@
         return Cylon.Pebble.Commands;
       };
 
-      # Public: Some text Here.
-      #
-      # Returns null.
       Pebble.prototype.message_queue = function() {
         return this.messages;
       };
 
-      # Public: Some text Here.
-      #
-      # Returns null.
       Pebble.prototype.last_message = function() {
         return this.messages[this.messages.length - 1];
       };
