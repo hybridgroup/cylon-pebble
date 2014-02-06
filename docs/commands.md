@@ -1,19 +1,25 @@
 # Commands
 
-## message() → nil
+## message() 
 
-Public: The message for the pebble driver.
+The message for the pebble driver.
 
-Returns nil
+##### Returns 
 
-## message_queue() → nil
+`nil`
 
-Public: The queue of messages that are being passed in via calls from the Pebble watch app.
+## message_queue()
 
-Returns nil
+The queue of messages that are being passed in via calls from the Pebble watch app.
 
-## last_message() → nil
+##### Returns 
 
-Public: The last message in the queue of messages passed in via calls from the Pebble watch app.
+`nil`
 
-Returns nil
+## last_message()
+
+The last message in the queue of messages passed in via calls from the Pebble watch app.
+
+##### Returns 
+
+`nil`
