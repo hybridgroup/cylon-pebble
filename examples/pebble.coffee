@@ -14,12 +14,12 @@ pebbleRobot = {
     driver: 'pebble'
 
   work: (my) ->
-    #c = 100
-    #every 1.second(), ->
-    #c++
-    #str = "c: #{c}"
-    #my.pebble.message_queue().push(str)
-    #console.log(my.pebble.last_message())
+    c = 100
+    every 1.second(), ->
+      c++
+      str = "c: #{c}"
+      my.pebble.message_queue().push(str)
+      console.log(my.pebble.last_message())
 }
 
 Cylon.robot(pebbleRobot)
