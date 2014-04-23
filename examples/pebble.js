@@ -19,14 +19,8 @@ pebbleRobot = {
   },
 
   work: function(my) {
-    var c;
-    c = 100;
-    return every(1..second(), function() {
-      var str;
-      c++;
-      str = "c: " + c;
-      my.pebble.message_queue().push(str);
-      return console.log(my.pebble.last_message());
+    my.pebble.on('button', function(data) {
+      console.log("Button pushed: " + data);
     });
   }
 

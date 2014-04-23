@@ -11,85 +11,58 @@ Want to use the Go programming language to power your robots? Check out our sist
 [![Build Status](https://secure.travis-ci.org/hybridgroup/cylon-pebble.png?branch=master)](http://travis-ci.org/hybridgroup/cylon-pebble)
 
 ## Getting Started
-Install the module with: `npm install cylon-pebble`
+* Install the module with: `npm install cylon-pebble`
+* Install Pebble 2.0 iOS or Android app. (If you haven't already)
+* Follow README to install and configure "Chomps" on your watch: https://github.com/hybridgroup/chomps
 
 ## Examples
+
+* Before running the example, make sure configuration settings match with your program,
+in example, api host is your computer IP, robot name is 'pebble', and robot api port is 8080
 
 ### JavaScript
 
 ```javascript
-Cylon = require('cylon');
+var Cylon = require('cylon');
 
 Cylon.api({
   host: '0.0.0.0',
   port: '8080'
 });
 
-PebbleRobot = (function() {
+pebbleRobot = {
+  name: 'pebble',
 
-  function PebbleRobot() {}
-
-  PebbleRobot.prototype.connection = {
+  connection: {
     name: 'pebble',
     adaptor: 'pebble'
-  };
+  },
 
-  PebbleRobot.prototype.device = {
+  device: {
     name: 'pebble',
     driver: 'pebble'
-  };
+  },
 
-  PebbleRobot.prototype.work = function(self) {
-    var c;
-    c = 100;
-    return every(1..second(), function() {
-      var str;
-      c++;
-      str = "c: " + c;
-      self.pebble.message_queue().push(str);
-      return console.log(self.pebble.last_message());
+  work: function(my) {
+    my.pebble.on('button', function(data) {
+      console.log("Button pushed: " + data);
     });
-  };
+  }
 
-  return PebbleRobot;
+}
 
-})();
-
-bot = new PebbleRobot();
-
-bot.name = 'pebble';
-
-Cylon.robot(bot);
-
+Cylon.robot(pebbleRobot);
 Cylon.start();
 ```
-### CoffeeScript
-```coffee-script
-Cylon = require('cylon')
 
-Cylon.api host: '0.0.0.0', port: '8080'
+## Supported Features
 
-class PebbleRobot
-  connection:
-    name: 'pebble', adaptor: 'pebble'
+* We support event detection of 3 main pebble buttons.
 
-  device:
-    name: 'pebble', driver: 'pebble'
+## Upcoming Features
 
-  work: (self) ->
-    c = 100
-    every 1.second(), ->
-      c++
-      str = "c: \#{c}"
-      self.pebble.message_queue().push(str)
-      console.log(self.pebble.last_message())
-
-bot = new PebbleRobot()
-bot.name = 'pebble'
-Cylon.robot bot
-
-Cylon.start()
-```
+* Accelerometer support
+* Pushing data to pebble watch
 
 ## Documentation
 We're busy adding documentation to our web site at http://cylonjs.com/ please check there as we continue to work on Cylon.js
