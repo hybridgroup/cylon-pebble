@@ -28,6 +28,6 @@ The last message in the queue of messages passed in via calls from the Pebble wa
 
 It emits an event, receives event name and data.
 
-##### Returns 
+##### Returns
 
 `nil`
