@@ -8,6 +8,15 @@ Stop the driver.
 
 Sent when the device has been started and is ready to use.
 
+## start_driver
+
+Starts the driver.
+
 ## button
 
-Sent when a pebble button is pressed.
+When a pebble button is pushed.
+
+## accel
+
+Receives x,y,z values from pebble accelerometer.
+

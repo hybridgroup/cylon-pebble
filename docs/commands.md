@@ -1,33 +1,21 @@
 # Commands
 
-## message() 
+## send_notification
 
-The message for the pebble driver.
+Used to send a notification to pebble watch
 
-##### Returns 
+## pending_message
 
-`nil`
-
-## message_queue()
-
-The queue of messages that are being passed in via calls from the Pebble watch app.
-
-##### Returns 
-
-`nil`
-
-## last_message()
-
-The last message in the queue of messages passed in via calls from the Pebble watch app.
-
-##### Returns 
-
-`nil`
-
-## publish_event()
-
-It emits an event, receives event name and data.
+Used from chomps apps to get pending notification message. DIRECT USE IS NOT RECOMMENDED.
 
 ##### Returns
 
-`nil`
+`String` with the last message on the queue.
+
+## publish_event
+
+Used from chomps apps to publish "Button" events. DIRECT USE IS NOT RECOMMENDED.
+
+##### Returns
+
+`boolean` operation result
