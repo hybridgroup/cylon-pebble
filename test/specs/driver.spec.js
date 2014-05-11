@@ -21,14 +21,17 @@ describe('Cylon.Drivers.Pebble', function() {
     expect(pebble.messages).to.be.an('array');
   });
 
-  it("has a message_queue function to access the messages", function() {
-    pebble.messages.push("test");
-    expect(pebble.message_queue()).to.be.eql(["test"]);
+  it("adds message to queue qhen sending notification", function() {
+    pebble.send_notification("robots");
+
+    expect(pebble.pending_message()).to.be.eql("robots");
   });
 
-  it("has a last_message function to access the latest message in the queue", function() {
-    pebble.messages.push("robots");
-    expect(pebble.last_message()).to.be.eql("robots");
+  it("returns pending messages and remove from queue", function() {
+    pebble.send_notification("robots");
+
+    expect(pebble.pending_message()).to.be.eql("robots");
+    expect(pebble.pending_message()).to.be.eql(null);
   });
 });
 

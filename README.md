@@ -45,6 +45,8 @@ pebbleRobot = {
   },
 
   work: function(my) {
+    my.pebble.send_notification("Hello Pebble!");
+
     my.pebble.on('button', function(data) {
       console.log("Button pushed: " + data);
     });
@@ -59,13 +61,11 @@ Cylon.start();
 ## Supported Features
 
 * We support event detection of 3 main pebble buttons.
-
-## Upcoming Features
-
 * Accelerometer support
 * Pushing data to pebble watch
 
 ## Documentation
+
 We're busy adding documentation to our web site at http://cylonjs.com/ please check there as we continue to work on Cylon.js
 
 Thank you!
