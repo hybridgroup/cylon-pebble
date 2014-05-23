@@ -1,7 +1,6 @@
 "use strict";
 
-var namespace = require('node-namespace'),
-    pebble = source("cylon-pebble");
+var pebble = source("cylon-pebble");
 
 describe("Cylon.Pebble", function() {
   it("can register the adaptor and driver", function() {
