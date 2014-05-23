@@ -2,7 +2,7 @@
 
 Cylon.js (http://cylonjs.com) is a JavaScript framework for robotics and physical computing using Node.js
 
-This module provides an adaptor and driver for the Pebble smart watch (http://getpebble.com/). It uses the Pebble 2.0 SDK, and requires the 2.0 iOS or Android app, and that the "Chomps" app (https://github.com/hybridgroup/chomps) has been installed on the Pebble watch.
+This module provides an adaptor and driver for the Pebble smart watch (http://getpebble.com/). It uses the Pebble 2.0 SDK, and requires the 2.0 iOS or Android app, and that the "Watchbot" app (https://github.com/hybridgroup/watchbot) has been installed on the Pebble watch.
 
 Want to use Ruby on robots? Check out our sister project Artoo (http://artoo.io)
 
@@ -13,7 +13,7 @@ Want to use the Go programming language to power your robots? Check out our sist
 ## Getting Started
 * Install the module with: `npm install cylon-pebble`
 * Install Pebble 2.0 iOS or Android app. (If you haven't already)
-* Follow README to install and configure "Chomps" on your watch: https://github.com/hybridgroup/chomps
+* Follow README to install and configure "watchbot" on your watch: https://github.com/hybridgroup/watchbot
 
 ## Examples
 
