@@ -6,7 +6,7 @@ Used to send a notification to pebble watch
 
 ## pending_message
 
-Used from chomps apps to get pending notification message. DIRECT USE IS NOT RECOMMENDED.
+Used from watchbot app to get pending notification message. DIRECT USE IS NOT RECOMMENDED.
 
 ##### Returns
 
@@ -14,7 +14,7 @@ Used from chomps apps to get pending notification message. DIRECT USE IS NOT REC
 
 ## publish_event
 
-Used from chomps apps to publish "Button" events. DIRECT USE IS NOT RECOMMENDED.
+Used from watchbot app to publish "Button" events. DIRECT USE IS NOT RECOMMENDED.
 
 ##### Returns
 
