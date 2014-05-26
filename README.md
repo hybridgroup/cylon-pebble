@@ -50,6 +50,10 @@ pebbleRobot = {
     my.pebble.on('button', function(data) {
       console.log("Button pushed: " + data);
     });
+
+    my.pebble.on('tap', function() {
+      console.log("Tap event detected");
+    });
   }
 
 }
@@ -60,9 +64,10 @@ Cylon.start();
 
 ## Supported Features
 
-* We support event detection of 3 main pebble buttons.
+* Event detection of 3 main pebble buttons
+* Tap event
 * Accelerometer support
-* Pushing data to pebble watch
+* Sending text notification to pebble
 
 ## Documentation
 

@@ -20,3 +20,6 @@ When a pebble button is pushed.
 
 Receives x,y,z values from pebble accelerometer.
 
+## tap
+
+When a pebble tap event is detected.

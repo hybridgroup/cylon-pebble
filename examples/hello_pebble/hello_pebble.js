@@ -25,6 +25,10 @@ pebbleRobot = {
     my.pebble.on('button', function(data) {
       console.log("Button pushed: " + data);
     });
+
+    my.pebble.on('tap', function(data) {
+      console.log("Tap event detected");
+    });
   }
 
 }
