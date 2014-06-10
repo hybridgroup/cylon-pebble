@@ -6,7 +6,7 @@ describe('Cylon.Adaptors.Pebble', function() {
   var pebble = new Adaptor();
 
   it("exposes a 'commands' function containing all adaptor commands", function() {
-    var commands = pebble.commands();
+    var commands = pebble.commands;
 
     expect(commands).to.be.a('array');
 

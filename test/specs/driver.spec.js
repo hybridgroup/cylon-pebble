@@ -6,7 +6,7 @@ describe('Cylon.Drivers.Pebble', function() {
   var pebble = new Driver({ device: {} });
 
   it("exposes a list of commands in the 'commands' method", function() {
-    var commands = pebble.commands();
+    var commands = pebble.commands;
 
     expect(commands).to.be.a('array');
 
