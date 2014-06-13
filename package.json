@@ -1,6 +1,6 @@
 {
   "name": "cylon-pebble",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "main": "lib/cylon-pebble.js",
   "description": "Cylon adaptor/driver for the Pebble smart watch",
   "homepage": "http://cylonjs.com",
@@ -20,6 +20,10 @@
     "chai":       "~1.7.2",
     "mocha":      "~1.12.1",
     "sinon":      "~1.7.3"
+  },
+
+  "peerDependencies": {
+    "cylon": ">= 0.15.0 < 1"
   },
 
   "dependencies": {
