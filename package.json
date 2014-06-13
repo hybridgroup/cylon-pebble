@@ -1,6 +1,6 @@
 {
   "name": "cylon-pebble",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "main": "lib/cylon-pebble.js",
   "description": "Cylon adaptor/driver for the Pebble smart watch",
   "homepage": "http://cylonjs.com",
@@ -23,6 +23,6 @@
   },
 
   "dependencies": {
-    "cylon": "~0.14.0"
+    "cylon": "~0.15.0"
   }
 }
