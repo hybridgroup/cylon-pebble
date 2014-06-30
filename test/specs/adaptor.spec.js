@@ -1,17 +1,21 @@
 "use strict";
 
-var Adaptor = source('adaptor');
+var Adaptor = source('adaptor'),
+    Commands = source('commands');
 
-describe('Cylon.Adaptors.Pebble', function() {
-  var pebble = new Adaptor();
+describe('Adaptor', function() {
+  var adaptor = new Adaptor();
 
-  it("exposes a 'commands' function containing all adaptor commands", function() {
-    var commands = pebble.commands;
+  describe("constructor", function() {
+    it("sets @pebble and @connector to null", function() {
+      expect(adaptor.pebble).to.be.eql(null);
+      expect(adaptor.connector).to.be.eql(null);
+    });
+  });
 
-    expect(commands).to.be.a('array');
-
-    for (var c = 0; c < commands.length; c++) {
-      expect(commands[c]).to.be.a('string');
-    }
+  describe("#commands", function() {
+    it('exposes an array of Pebble commands', function() {
+      expect(adaptor.commands).to.be.eql(Commands);
+    });
   });
 });
