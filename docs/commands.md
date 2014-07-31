@@ -1,6 +1,6 @@
 # Commands
 
-## send_notification
+## sendNotification
 
 Used to send a notification to pebble watch
 

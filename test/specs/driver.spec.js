@@ -38,13 +38,13 @@ describe('Driver', function() {
     });
   });
 
-  describe("#send_notification", function() {
+  describe("#sendNotification", function() {
     beforeEach(function() {
       driver.messages = ["message"]
     });
 
     it("pushes a message onto the @messages", function() {
-      driver.send_notification("new_message");
+      driver.sendNotification("new_message");
       expect(driver.messages).to.be.eql(["message", "new_message"]);
     });
   });

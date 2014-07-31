@@ -20,7 +20,7 @@ pebbleRobot = {
   },
 
   work: function(my) {
-    my.pebble.send_notification("Hello Pebble!");
+    my.pebble.sendNotification("Hello Pebble!");
 
     my.pebble.on('button', function(data) {
       console.log("Button pushed: " + data);
