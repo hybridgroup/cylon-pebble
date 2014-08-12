@@ -33,8 +33,10 @@ describe('Driver', function() {
   });
 
   describe("#commands", function() {
-    it("is an array of Pebble commands", function() {
-      expect(driver.commands).to.be.eql(Commands);
+    it("is an object containing Pebble commands", function() {
+      for (var c in driver.commands) {
+        expect(driver.commands[c]).to.be.a('function');
+      }
     });
   });
 
