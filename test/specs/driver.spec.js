@@ -8,7 +8,7 @@ describe('Driver', function() {
 
   beforeEach(function() {
     driver = new Driver({
-      device: {}
+      device: { connection: {} }
     });
   });
 
