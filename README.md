@@ -8,7 +8,7 @@ Want to use Ruby on robots? Check out our sister project Artoo (http://artoo.io)
 
 Want to use the Go programming language to power your robots? Check out our sister project Gobot (http://gobot.io).
 
-[![Build Status](https://secure.travis-ci.org/hybridgroup/cylon-pebble.png?branch=master)](http://travis-ci.org/hybridgroup/cylon-pebble)
+[![Build Status](https://secure.travis-ci.org/hybridgroup/cylon-pebble.png?branch=master)](http://travis-ci.org/hybridgroup/cylon-pebble) [![Code Climate](https://codeclimate.com/github/hybridgroup/cylon-pebble/badges/gpa.svg)](https://codeclimate.com/github/hybridgroup/cylon-pebble) [![Test Coverage](https://codeclimate.com/github/hybridgroup/cylon-pebble/badges/coverage.svg)](https://codeclimate.com/github/hybridgroup/cylon-pebble)
 
 ## Getting Started
 * Install the module with: `npm install cylon-pebble`
