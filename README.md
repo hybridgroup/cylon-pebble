@@ -25,13 +25,17 @@ in example, api host is your computer IP, robot name is 'pebble', and robot api 
 ```javascript
 var Cylon = require('cylon');
 
-Cylon.api({
-  host: '0.0.0.0',
-  port: '8080',
-  ssl: false
+Cylon.config({
+  api: {
+    host: '0.0.0.0',
+    port: '8080',
+    ssl: false
+  }
 });
 
-pebbleRobot = {
+Cylon.api();
+
+Cylon.robot({
   name: 'pebble',
 
   connection: {
@@ -55,11 +59,7 @@ pebbleRobot = {
       console.log("Tap event detected");
     });
   }
-
-}
-
-Cylon.robot(pebbleRobot);
-Cylon.start();
+}).start();
 ```
 
 ## Supported Features
