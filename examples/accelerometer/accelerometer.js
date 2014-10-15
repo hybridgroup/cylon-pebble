@@ -6,7 +6,7 @@ Cylon.config({
     port: '8080',
     ssl:  false
   }
-})
+});
 
 Cylon.api();
 
