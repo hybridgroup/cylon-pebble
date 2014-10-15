@@ -16,8 +16,8 @@ cylon.robot({
   device: { name: 'pebble', driver: 'pebble' }
 })
 
-.on('ready', function(my) {
-    my.pebble.on('accel', function(data) {
+.on('ready', function(robot) {
+    robot.pebble.on('accel', function(data) {
       console.log(data);
     });
 })

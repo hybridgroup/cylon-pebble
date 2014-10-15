@@ -1,6 +1,6 @@
-var Cylon = require('cylon');
+var cylon = require('cylon');
 
-Cylon.config({
+cylon.config({
   api: {
     host: '0.0.0.0',
     port: '8080',
@@ -8,23 +8,23 @@ Cylon.config({
   }
 });
 
-Cylon.api();
+cylon.api();
 
-Cylon.robot({
+cylon.robot({
   name: 'pebble',
 
   connection: { name: 'pebble', adaptor: 'pebble' },
   device: { name: 'pebble', driver: 'pebble' }
 })
 
-.on('ready', function(my) {
-  my.pebble.send_notification("Hello Pebble!");
+.on('ready', function(robot) {
+  robot.pebble.send_notification("Hello Pebble!");
 
-  my.pebble.on('button', function(data) {
+  robot.pebble.on('button', function(data) {
     console.log("Button pushed:", data);
   });
 
-  my.pebble.on('tap', function(data) {
+  robot.pebble.on('tap', function(data) {
     console.log("Tap event detected:", data);
   });
 })
