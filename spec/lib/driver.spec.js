@@ -8,7 +8,7 @@ describe('Driver', function() {
 
   beforeEach(function() {
     driver = new Driver({
-      device: { connection: {} }
+      adaptor: {}
     });
   });
 
@@ -81,12 +81,12 @@ describe('Driver', function() {
 
   describe("#publish_event", function() {
     beforeEach(function() {
-      driver.connection = { emit: spy() };
+      driver.adaptor = { emit: spy() };
     });
 
     it("emits an event with the supplied name and data", function() {
       driver.publish_event("hello", "world");
-      expect(driver.connection.emit).to.be.calledWith("hello", "world");
+      expect(driver.adaptor.emit).to.be.calledWith("hello", "world");
     });
   });
 });
