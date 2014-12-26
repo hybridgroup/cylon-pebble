@@ -10,17 +10,37 @@ Want to use the Go programming language to power your robots? Check out our sist
 
 [![Build Status](https://secure.travis-ci.org/hybridgroup/cylon-pebble.png?branch=master)](http://travis-ci.org/hybridgroup/cylon-pebble) [![Code Climate](https://codeclimate.com/github/hybridgroup/cylon-pebble/badges/gpa.svg)](https://codeclimate.com/github/hybridgroup/cylon-pebble) [![Test Coverage](https://codeclimate.com/github/hybridgroup/cylon-pebble/badges/coverage.svg)](https://codeclimate.com/github/hybridgroup/cylon-pebble)
 
-## Getting Started
-* Install the module with: `npm install cylon-pebble`
-* Install Pebble 2.0 iOS or Android app. (If you haven't already)
-* Follow README to install and configure "watchbot" on your watch: https://github.com/hybridgroup/watchbot
+## How to Install
 
-## Examples
+    $ npm install cylon-pebble
+
+First, install the Pebble 2.0 iOS or Android app. (If you haven't already)
+
+With that done, download WatchBot (our Pebble App) from the [Pebble App Store](https://apps.getpebble.com/applications/52b11885b0661fb292000004).
+
+<a href="https://apps.getpebble.com/applications/52b11885b0661fb292000004">
+  <img src="http://cylonjs.com/images/blog/2014-07-22/watchbot_appstore.png" alt="Pebble App Store" style="width: 100%">
+</a>
+
+<img src="http://cylonjs.com/images/blog/2014-07-22/watchbot_config.png" alt="Watchbot configuration screenshot"  style="width: 50%">
+
+### Configuration
+
+Once you've got WatchBot installed, go to "My Pebble" on your smartphone's Pebble app. Once there, configure the following settings:
+
+- **robot name:** leave this blank
+- **robot api host:** IP of the computer running the Cylon API
+- **robot api port:** port number for the Cylon API
+- **publish command:** leave this blank
+- **message command:** leave this blank
+- **accelerometer:** leave this unchecked
+
+## How to Use
 
 * Before running the example, make sure configuration settings match with your program,
 in example, api host is your computer IP, robot name is 'pebble', and robot api port is 8080
 
-### JavaScript
+This small program receives message queue events from a Pebble smart watch.
 
 ```javascript
 var Cylon = require('cylon');
@@ -56,12 +76,23 @@ Cylon.robot({
 }).start();
 ```
 
-## Supported Features
+## How to Connect
 
-* Event detection of 3 main pebble buttons
-* Tap event
-* Accelerometer support
-* Sending text notification to pebble
+This software requires version 2.X of the Pebble watch firmware.
+
+The main steps are:
+
+- Install Pebble 2.0 iOS or Android app. (If you haven't already)
+- Install watchbot by following [these instructions](https://github.com/hybridgroup/watchbot/raw/master/README.md)
+- After app is installed, click on "Settings" and configure robot name, robot api host, and robot api port
+- Configuration settings must match with your program, in this example, api host would be your computer IP, robot name is 'pebble', and robot api port is 8080
+
+### Supported Features
+
+- Event detection of 3 main pebble buttons
+- Tap event
+- Accelerometer support
+- Sending text notification to pebble
 
 ## Documentation
 
