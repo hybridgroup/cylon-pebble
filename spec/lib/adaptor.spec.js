@@ -1,9 +1,10 @@
+/* jshint expr:true */
 "use strict";
 
-var Adaptor = source('adaptor'),
-    Commands = source('commands');
+var Adaptor = source("adaptor"),
+    Commands = source("commands");
 
-describe('Adaptor', function() {
+describe("Adaptor", function() {
   var adaptor = new Adaptor();
 
   describe("constructor", function() {
@@ -14,7 +15,7 @@ describe('Adaptor', function() {
   });
 
   describe("#commands", function() {
-    it('exposes an array of Pebble commands', function() {
+    it("exposes an array of Pebble commands", function() {
       expect(adaptor.commands).to.be.eql(Commands);
     });
   });

@@ -1,9 +1,9 @@
+/* jshint expr:true */
 "use strict";
 
-var Driver = source('driver'),
-    Commands = source('commands');
+var Driver = source("driver");
 
-describe('Driver', function() {
+describe("Driver", function() {
   var driver;
 
   beforeEach(function() {
@@ -23,26 +23,26 @@ describe('Driver', function() {
       driver.defineDriverEvent = spy();
     });
 
-    it('sets up driver events', function() {
+    it("sets up driver events", function() {
       driver.start(function() {});
 
-      expect(driver.defineDriverEvent).to.be.calledWith('button');
-      expect(driver.defineDriverEvent).to.be.calledWith('accel');
-      expect(driver.defineDriverEvent).to.be.calledWith('tap');
+      expect(driver.defineDriverEvent).to.be.calledWith("button");
+      expect(driver.defineDriverEvent).to.be.calledWith("accel");
+      expect(driver.defineDriverEvent).to.be.calledWith("tap");
     });
   });
 
   describe("#commands", function() {
     it("is an object containing Pebble commands", function() {
       for (var c in driver.commands) {
-        expect(driver.commands[c]).to.be.a('function');
+        expect(driver.commands[c]).to.be.a("function");
       }
     });
   });
 
   describe("#send_notification", function() {
     beforeEach(function() {
-      driver.messages = ["message"]
+      driver.messages = ["message"];
     });
 
     it("pushes a message onto the @messages", function() {
@@ -53,11 +53,11 @@ describe('Driver', function() {
 
   describe("#message_queue", function() {
     beforeEach(function() {
-      driver.messages = ["message"]
+      driver.messages = ["message"];
     });
 
     it("returns the message queue", function() {
-      expect(driver.message_queue()).to.be.eql(['message']);
+      expect(driver.message_queue()).to.be.eql(["message"]);
     });
   });
 
@@ -67,13 +67,13 @@ describe('Driver', function() {
         driver.messages = ["alpha", "bravo"];
       });
 
-      it('returns the message at the front of the queue', function() {
+      it("returns the message at the front of the queue", function() {
         expect(driver.pending_message()).to.be.eql("alpha");
       });
     });
 
     context("if the queue is empty", function() {
-      it('returns null', function() {
+      it("returns null", function() {
         expect(driver.pending_message()).to.be.eql(null);
       });
     });
