@@ -12,7 +12,7 @@ Want to use the Go programming language to power your robots? Check out our sist
 
 ## How to Install
 
-    $ npm install cylon-pebble
+    $ npm install cylon cylon-pebble
 
 First, install the Pebble 2.0 iOS or Android app. (If you haven't already)
 
