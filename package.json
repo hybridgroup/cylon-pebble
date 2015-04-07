@@ -22,10 +22,6 @@
     "sinon":      "~1.7.3"
   },
 
-  "peerDependencies": {
-    "cylon": ">= 0.22.0 < 1"
-  },
-
   "dependencies": {
     "cylon": "~0.22.0"
   }
