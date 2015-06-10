@@ -2,7 +2,7 @@
   "name": "cylon-pebble",
   "version": "0.16.0",
   "main": "lib/cylon-pebble.js",
-  "description": "Cylon adaptor/driver for the Pebble smart watch",
+  "description": "Cylon.js adaptor/driver for the Pebble smartwatch",
   "homepage": "http://cylonjs.com",
   "bugs": "https://github.com/hybridgroup/cylon-pebble/issues",
 
@@ -13,7 +13,23 @@
     "url": "https://github.com/hybridgroup/cylon-pebble"
   },
 
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
+
+  "keywords": [
+    "cylon",
+    "cylonjs",
+    "cylons",
+    "robot",
+    "robots",
+    "robotics",
+    "iot",
+    "hardware",
+    "pebble",
+    "pebble time",
+    "wearables",
+    "smartwatch",
+    "smart watch"
+  ],
 
   "devDependencies": {
     "sinon-chai": "~2.4.0",
