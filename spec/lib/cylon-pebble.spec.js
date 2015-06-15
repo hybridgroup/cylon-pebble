@@ -1,10 +1,9 @@
-/* jshint expr:true */
 "use strict";
 
-var pebble = source("cylon-pebble");
+var pebble = lib("cylon-pebble");
 
-var Adaptor = source("adaptor"),
-    Driver = source("driver");
+var Adaptor = lib("adaptor"),
+    Driver = lib("driver");
 
 describe("cylon-pebble", function() {
   describe("#adaptors", function() {

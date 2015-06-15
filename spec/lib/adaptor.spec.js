@@ -1,8 +1,7 @@
-/* jshint expr:true */
 "use strict";
 
-var Adaptor = source("adaptor"),
-    Commands = source("commands");
+var Adaptor = lib("adaptor"),
+    Commands = lib("commands");
 
 describe("Adaptor", function() {
   var adaptor = new Adaptor();
