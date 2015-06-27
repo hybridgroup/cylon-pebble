@@ -1,6 +1,6 @@
 "use strict";
 
-var pebble = lib("cylon-pebble");
+var pebble = lib("../");
 
 var Adaptor = lib("adaptor"),
     Driver = lib("driver");
